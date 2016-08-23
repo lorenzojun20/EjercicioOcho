@@ -94,13 +94,15 @@ public class Ejercicio8 extends javax.swing.JFrame {
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("Total de Horas en $:");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 170, 110, 30));
+
+        txtTotalHoras.setEditable(false);
         jPanel1.add(txtTotalHoras, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 200, 90, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 375, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -113,24 +115,24 @@ public class Ejercicio8 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void cmdCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdCalcularActionPerformed
-        String montod,mtotal,th;
+        String montod, mtotal, th;
         int horas;
-        double op1=0,op2=0,op3=0;
-        
-        if(txtHorasTrab.getText().trim().isEmpty()){
-            JOptionPane.showMessageDialog(this, "Digite Horas Trabajadas","ERROR",JOptionPane.ERROR_MESSAGE);
+        double op1 = 0, op2 = 0, op3 = 0;
+
+        if (txtHorasTrab.getText().trim().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Digite Horas Trabajadas", "ERROR", JOptionPane.ERROR_MESSAGE);
             txtHorasTrab.requestFocusInWindow();
-        }else{
-            horas=Integer.parseInt(txtHorasTrab.getText());
-            op1=horas*20000;
-            op2=(op1*5)/100;
-            op3=op1-op2;
+        } else {
+            horas = Integer.parseInt(txtHorasTrab.getText());
+            op1 = horas * 20000;
+            op2 = (op1 * 5) / 100;
+            op3 = op1 - op2;
         }
-        montod=String.valueOf(op2);
+        montod = String.valueOf(op2);
         txtMonDesc.setText(montod);
-        mtotal=String.valueOf(op3);
+        mtotal = String.valueOf(op3);
         txtMonTotal.setText(mtotal);
-        th=String.valueOf(op1);
+        th = String.valueOf(op1);
         txtTotalHoras.setText(th);
     }//GEN-LAST:event_cmdCalcularActionPerformed
 
@@ -139,18 +141,18 @@ public class Ejercicio8 extends javax.swing.JFrame {
         txtTotalHoras.setText("");
         txtMonDesc.setText("");
         txtMonTotal.setText("");
-        
+
         txtHorasTrab.requestFocusInWindow();
     }//GEN-LAST:event_cmdBorrarActionPerformed
 
     private void txtHorasTrabKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtHorasTrabKeyTyped
-         char c=evt.getKeyChar(); 
-             
-         
-          if(!Character.isDigit(c)) { 
-              getToolkit().beep(); 
-               
-              evt.consume(); }
+        char c = evt.getKeyChar();
+
+        if (!Character.isDigit(c)) {
+            getToolkit().beep();
+
+            evt.consume();
+        }
     }//GEN-LAST:event_txtHorasTrabKeyTyped
 
     /**
